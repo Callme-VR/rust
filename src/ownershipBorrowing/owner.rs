@@ -9,16 +9,16 @@
 // ### Example: Borrowing a String
 
 // ```rust
-fn main() {
-    let s1 = String::from("hello");
-    let len = calculate_length(&s1);
+// fn main() {
+//     let s1 = String::from("hello");
+//     let len = calculate_length(&s1);
 
-    println!("The length of '{}' is {}.", s1, len);
-}
+//     println!("The length of '{}' is {}.", s1, len);
+// }
 
-fn calculate_length(s: &String) -> usize {
-    s.len()
-}
+// fn calculate_length(s: &String) -> usize {
+//     s.len()
+// }
 
 // fn print_name(name: &String) {
 //     println!("{name}");
@@ -135,3 +135,29 @@ fn calculate_length(s: &String) -> usize {
 // - Borrow with &: lets you read without taking ownership.
 // - Borrow with &mut: lets you modify through a mutable reference.
 // - Ownership
+
+fn main() {
+    let mut score = 40;
+    add_point(&mut score);
+
+    println!("updated score is:{score}");
+}
+
+fn add_point(score: &mut i32) {
+    *score += 40;
+}
+
+// &mut score
+// Creates a mutable reference to the variable score. It allows the function to modify the original value.
+
+// score: &mut i32
+// Declares that the function parameter receives a mutable reference to an integer.
+
+// *score += 10
+// Dereferences the reference and adds 10 to the original integer.
+
+// Concept	What it means
+// Move	let second = first; transfers ownership of a non-Copy String.
+// Clone	let second = first.clone(); creates a separate owned copy.
+// Immutable borrow	&s1 lets a function read a value without taking ownership.
+// Mutable borrow	&mut score lets a function modify the original value.
