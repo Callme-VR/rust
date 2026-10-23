@@ -11,3 +11,8 @@ path = "src/main.rs"
 [[bin]]
 name = "function"
 path = "src/bin/function.rs"
+
+
+[[bin]]
+name = "owner"
+path = "src/ownershipBorrowing/owner.rs"
